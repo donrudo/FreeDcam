@@ -836,7 +836,9 @@ cameraApiManager.setCameraHolderEventHandler(yourClass);
 
 1. **DON'T use EventBus**: The project uses a custom event system. Don't add EventBus dependencies or usage.
 
-2. **DON'T call camera APIs on main thread**: Always use background threads for camera operations:
+2. **DON'T use emojis or word "comprehensive" at comments or documentation**
+
+3. **DON'T call camera APIs on main thread**: Always use background threads for camera operations:
    ```java
    // BAD
    camera.open();
@@ -847,7 +849,7 @@ cameraApiManager.setCameraHolderEventHandler(yourClass);
    });
    ```
 
-3. **DON'T assume camera features exist**: Always check if features are supported:
+4. **DON'T assume camera features exist**: Always check if features are supported:
    ```java
    // BAD
    parameters.getManualIso().setValue(400);
@@ -858,7 +860,7 @@ cameraApiManager.setCameraHolderEventHandler(yourClass);
    }
    ```
 
-4. **DON'T hardcode device detection**: Use Build properties:
+5. **DON'T hardcode device detection**: Use Build properties:
    ```java
    // BAD
    if (deviceModel.equals("SM-G950F")) { ... }
@@ -868,11 +870,11 @@ cameraApiManager.setCameraHolderEventHandler(yourClass);
        Build.DEVICE.contains("dreamlte")) { ... }
    ```
 
-5. **DON'T leak camera resources**: Always release camera in finally blocks or use try-with-resources patterns.
+6. **DON'T leak camera resources**: Always release camera in finally blocks or use try-with-resources patterns.
 
-6. **DON'T modify settings storage format**: Breaking changes affect all users' settings.
+7. **DON'T modify settings storage format**: Breaking changes affect all users' settings.
 
-7. **DON'T add heavyweight dependencies**: The app targets min SDK 14 and needs to stay lean.
+8. **DON'T add heavyweight dependencies**: The app targets min SDK 14 and needs to stay lean.
 
 ### Common Mistakes
 
